@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rédacteur d'Article - Administration RAO MEDIA TV</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-body">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+        <div class="sidebar-brand">
+            <a href="dashboard.html" class="d-flex align-items-center text-white text-decoration-none">
+                <img src="../assets/images/logo.png" alt="RAO MEDIA TV" class="sidebar-logo">
+            </a>
+        </div>
+
+        <div class="sidebar-heading">Général</div>
+        <ul class="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="dashboard.html">
+                    <i class="bi bi-speedometer2"></i> Dashboard
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-heading">Contenu Éditorial</div>
+        <ul class="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="articles.html">
+                    <i class="bi bi-newspaper"></i> Articles
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="ajouter-article.html">
+                    <i class="bi bi-pencil-square"></i> Nouveau Article
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="categories.html">
+                    <i class="bi bi-tags"></i> Catégories
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="evenements.html">
+                    <i class="bi bi-calendar-event"></i> Événements
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="sports.html">
+                    <i class="bi bi-trophy"></i> Sports & Scores
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="videos.html">
+                    <i class="bi bi-play-btn"></i> Vidéos Web TV
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-heading">Administration</div>
+        <ul class="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="commentaires.html">
+                    <i class="bi bi-chat-dots"></i> Commentaires
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="utilisateurs.html">
+                    <i class="bi bi-people"></i> Utilisateurs
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="parametres.html">
+                    <i class="bi bi-gear"></i> Paramètres du Site
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <a href="#" class="btn-admin-logout text-danger text-decoration-none small fw-bold d-flex align-items-center gap-2">
+                <i class="bi bi-box-arrow-left fs-5"></i> Déconnexion
+            </a>
+        </div>
+    </aside>
+
+    <!-- MAIN WRAPPER -->
+    <div class="admin-main-wrapper">
+        <header class="admin-topbar">
+            <div class="d-flex align-items-center gap-3">
+                <button class="topbar-toggler" id="sidebar-toggle">
+                    <i class="bi bi-list"></i>
+                </button>
+                <h5 class="mb-0 fw-bold d-none d-sm-block text-dark">Éditeur Éditorial</h5>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+                <a href="../index.html" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill px-3">
+                    <i class="bi bi-globe me-1 text-danger"></i> Voir le site public
+                </a>
+                <div class="dropdown">
+                    <button class="btn btn-light btn-sm dropdown-toggle d-flex align-items-center gap-2 border" type="button" data-bs-toggle="dropdown">
+                        <div class="rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center" style="width: 28px; height: 28px; font-size: 0.8rem;">
+                            AD
+                        </div>
+                        <span class="d-none d-md-inline small fw-semibold admin-user-name">Aly Dieng</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+                        <li><a class="dropdown-item small text-danger btn-admin-logout" href="#"><i class="bi bi-box-arrow-left me-2"></i>Déconnexion</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main class="admin-content">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2 class="fs-4 fw-bold mb-1" id="editor-page-title"><i class="bi bi-pencil-fill text-danger me-2"></i>Rédiger un nouvel article</h2>
+                    <p class="text-muted small mb-0">Créez ou modifiez des publications professionnelles avec mise en forme complète.</p>
+                </div>
+                <a href="articles.html" class="btn btn-outline-secondary btn-sm">
+                    <i class="bi bi-arrow-left me-1"></i> Retour à la liste
+                </a>
+            </div>
+
+            <form id="article-form">
+                <div class="row g-4">
+                    <!-- Colonne gauche : Contenu & Titre -->
+                    <div class="col-lg-8">
+                        <div class="admin-card p-4">
+                            <!-- Titre -->
+                            <div class="mb-3">
+                                <label for="article-title" class="form-label fw-bold">Titre de l'article *</label>
+                                <input type="text" id="article-title" class="form-control form-control-lg" placeholder="Ex: Déclaration officielle du Président de la République..." required>
+                            </div>
+
+                            <!-- Résumé / Chapeau -->
+                            <div class="mb-3">
+                                <label for="article-summary" class="form-label fw-bold">Résumé / Chapeau d'accroche</label>
+                                <textarea id="article-summary" class="form-control" rows="2" placeholder="Brève introduction percutante qui s'affichera sous le titre..."></textarea>
+                            </div>
+
+                            <!-- Éditeur WYSIWYG -->
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Contenu complet de l'article *</label>
+                                <div class="editor-toolbar">
+                                    <button type="button" class="editor-btn" data-cmd="bold" title="Gras"><i class="bi bi-type-bold"></i></button>
+                                    <button type="button" class="editor-btn" data-cmd="italic" title="Italique"><i class="bi bi-type-italic"></i></button>
+                                    <button type="button" class="editor-btn" data-cmd="underline" title="Souligné"><i class="bi bi-type-underline"></i></button>
+                                    <div class="vr mx-1"></div>
+                                    <button type="button" class="editor-btn" data-cmd="formatBlock" data-val="h2" title="Grand Titre H2"><strong>H2</strong></button>
+                                    <button type="button" class="editor-btn" data-cmd="formatBlock" data-val="h3" title="Sous-Titre H3"><strong>H3</strong></button>
+                                    <button type="button" class="editor-btn" data-cmd="formatBlock" data-val="p" title="Paragraphe normal">P</button>
+                                    <div class="vr mx-1"></div>
+                                    <button type="button" class="editor-btn" data-cmd="insertUnorderedList" title="Liste à puces"><i class="bi bi-list-ul"></i></button>
+                                    <button type="button" class="editor-btn" data-cmd="insertOrderedList" title="Liste numérotée"><i class="bi bi-list-ol"></i></button>
+                                    <button type="button" class="editor-btn" data-cmd="formatBlock" data-val="blockquote" title="Citation"><i class="bi bi-quote"></i></button>
+                                    <div class="vr mx-1"></div>
+                                    <button type="button" class="editor-btn" data-cmd="createLink" title="Insérer un lien"><i class="bi bi-link-45deg"></i></button>
+                                    <button type="button" class="editor-btn" data-cmd="insertImage" title="Insérer une image dans le texte"><i class="bi bi-image"></i></button>
+                                    <button type="button" class="editor-btn" data-cmd="removeFormat" title="Nettoyer la mise en forme"><i class="bi bi-eraser"></i></button>
+                                </div>
+                                <div id="article-editor-content" class="editor-content-area" contenteditable="true">
+                                    <p>Rédigez le contenu détaillé de votre article ici...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Colonne droite : Métadonnées, Image & Publication -->
+                    <div class="col-lg-4">
+                        <!-- Bloc Enregistrement -->
+                        <div class="admin-card p-3 mb-3">
+                            <h6 class="fw-bold mb-3"><i class="bi bi-send-check text-danger me-1"></i> Actions de publication</h6>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-danger py-2 fw-bold" style="background-color: #D71920; border: none;">
+                                    <i class="bi bi-check-circle me-1"></i> Enregistrer et Publier
+                                </button>
+                                <button type="button" id="btn-save-draft" class="btn btn-outline-secondary btn-sm py-2">
+                                    <i class="bi bi-save me-1"></i> Enregistrer en brouillon
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Paramètres de l'article -->
+                        <div class="admin-card p-3 mb-3">
+                            <h6 class="fw-bold mb-3"><i class="bi bi-sliders text-danger me-1"></i> Détails éditoriaux</h6>
+
+                            <!-- Rubrique -->
+                            <div class="mb-3">
+                                <label for="article-category" class="form-label small fw-bold">Rubrique / Catégorie *</label>
+                                <select id="article-category" class="form-select form-select-sm" required>
+                                    <!-- Rempli dynamiquement -->
+                                </select>
+                            </div>
+
+                            <!-- Auteur -->
+                            <div class="mb-3">
+                                <label for="article-author" class="form-label small fw-bold">Nom du journaliste / Auteur</label>
+                                <input type="text" id="article-author" class="form-control form-control-sm" placeholder="Ex: Aly Dieng" value="Aly Dieng">
+                            </div>
+
+                            <!-- Date de publication -->
+                            <div class="mb-3">
+                                <label for="article-date" class="form-label small fw-bold">Date de publication</label>
+                                <input type="date" id="article-date" class="form-control form-control-sm">
+                            </div>
+
+                            <!-- Option À la une -->
+                            <div class="form-check form-switch pt-2 border-top">
+                                <input class="form-check-input" type="checkbox" id="article-featured">
+                                <label class="form-check-label small fw-bold" for="article-featured">
+                                    Positionner cet article « À la une »
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Image de couverture -->
+                        <div class="admin-card p-3">
+                            <h6 class="fw-bold mb-2"><i class="bi bi-card-image text-danger me-1"></i> Image principale</h6>
+                            
+                            <!-- URL Image -->
+                            <div class="mb-2">
+                                <label for="article-image-url" class="form-label small text-muted">URL de l'image</label>
+                                <input type="url" id="article-image-url" class="form-control form-control-sm" placeholder="https://...">
+                            </div>
+
+                            <!-- Téléversement direct -->
+                            <div class="mb-3">
+                                <label for="article-image-file" class="form-label small text-muted">Ou téléverser depuis votre appareil (compressée automatiquement)</label>
+                                <input type="file" id="article-image-file" class="form-control form-control-sm" accept="image/*">
+                            </div>
+
+                            <!-- Aperçu -->
+                            <div class="border rounded p-1 text-center bg-light">
+                                <img id="article-image-preview" src="" alt="Aperçu" class="img-fluid rounded d-none" style="max-height: 180px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <!-- Bootstrap Bundle & Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/storage.js"></script>
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAO MEDIA TV - Le portail de l'information en continu au Sénégal</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Styles personnalisés -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- 1. TOP BAR -->
+    <div class="top-bar py-1 d-none d-md-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-3">
+                <span id="current-date-display"><i class="bi bi-calendar3 me-1 text-rao-red"></i> Chargement de la date...</span>
+                <span><i class="bi bi-cloud-sun-fill text-warning me-1"></i> Dakar 29°C</span>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <div class="social-icons">
+                    <a href="#" class="social-fb" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-tw" title="X / Twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="social-yt" title="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" class="social-tk" title="TikTok"><i class="bi bi-tiktok"></i></a>
+                    <a href="#" class="social-wa" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                </div>
+                <div class="border-start border-secondary ps-3 ms-2">
+                    <a href="admin/login.html" class="text-white text-decoration-none fw-semibold small">
+                        <i class="bi bi-shield-lock-fill text-rao-red me-1"></i> Espace Admin
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. MAIN HEADER -->
+    <header class="main-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 col-8">
+                    <a href="index.html" class="d-inline-block">
+                        <img src="assets/images/logo.png" alt="RAO MEDIA TV" class="brand-logo-img">
+                    </a>
+                </div>
+                <div class="col-md-5 d-none d-md-block">
+                    <div class="header-banner">
+                        <div>
+                            <span class="badge bg-danger mb-1 text-uppercase">Information 24h/24</span>
+                            <h6 class="mb-0 fw-bold fs-6">L'actualité décryptée en temps réel</h6>
+                            <small class="text-light opacity-75">Sénégal &bull; Afrique &bull; Monde</small>
+                        </div>
+                        <i class="bi bi-broadcast text-danger fs-2 animate-pulse"></i>
+                    </div>
+                </div>
+                <div class="col-md-3 col-4 text-end">
+                    <form id="global-search-form" class="d-none d-lg-block">
+                        <div class="input-group">
+                            <input type="text" id="global-search-input" class="form-control form-control-sm" placeholder="Rechercher...">
+                            <button class="btn btn-rao-red btn-sm" type="submit"><i class="bi bi-search"></i></button>
+                        </div>
+                    </form>
+                    <a href="admin/login.html" class="btn btn-outline-dark btn-sm d-lg-none">
+                        <i class="bi bi-person-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-lg main-navbar navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-lg-none fw-bold" href="index.html">
+                <span class="text-rao-red">RAO</span> MEDIA TV
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html"><i class="bi bi-house-door-fill me-1"></i>Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categorie.html?cat=politique">Politique</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categorie.html?cat=societe">Société</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categorie.html?cat=economie">Économie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categorie.html?cat=sport">Sport</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categorie.html?cat=culture">Culture</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categorie.html?cat=international">International</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="evenements.html">Événements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="videos.html">Vidéos</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-2 py-2 py-lg-0">
+                    <a href="videos.html" class="live-badge-btn text-decoration-none">
+                        <i class="bi bi-play-circle-fill me-1"></i> DIRECT TV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 4. BREAKING NEWS TICKER -->
+    <div class="ticker-container">
+        <div class="ticker-badge">
+            <i class="bi bi-lightning-charge-fill me-1"></i> Dernière Minute
+        </div>
+        <div class="ticker-content">
+            <div id="ticker-track" class="ticker-scroll">
+                <!-- Rempli dynamiquement par app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="py-4">
+        <div class="container">
+
+            <!-- 5. SECTION À LA UNE (HERO) -->
+            <section class="mb-5">
+                <div class="row g-4">
+                    <!-- Grand article principal (Gauche) -->
+                    <div class="col-lg-7" id="hero-main-container">
+                        <!-- Rempli dynamiquement -->
+                    </div>
+                    <!-- 4 Actualités secondaires (Droite) -->
+                    <div class="col-lg-5" id="hero-secondary-container">
+                        <!-- Rempli dynamiquement -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. SECTION FLASH INFO & LES PLUS LUS -->
+            <section class="mb-5">
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="section-header">
+                            <h2 class="section-title"><i class="bi bi-bank"></i> Actualités Politiques</h2>
+                            <a href="categorie.html?cat=politique" class="section-more-link">Toute la politique <i class="bi bi-chevron-right"></i></a>
+                        </div>
+                        <div class="row g-3" id="politique-articles-container">
+                            <!-- Rempli dynamiquement -->
+                        </div>
+                    </div>
+                    <!-- Sidebar Tendances (Les plus lus) -->
+                    <div class="col-lg-4">
+                        <div class="bg-white p-3 rounded border shadow-sm h-100">
+                            <div class="section-header mb-3">
+                                <h3 class="section-title fs-6"><i class="bi bi-fire text-danger"></i> Les Plus Lus</h3>
+                            </div>
+                            <div id="trending-articles-container">
+                                <!-- Rempli dynamiquement -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. SECTION ÉCONOMIE -->
+            <section class="mb-5">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="bi bi-graph-up-arrow"></i> Économie & Développement</h2>
+                    <a href="categorie.html?cat=economie" class="section-more-link">Tous les articles <i class="bi bi-chevron-right"></i></a>
+                </div>
+                <div class="row g-3" id="economie-articles-container">
+                    <!-- Rempli dynamiquement -->
+                </div>
+            </section>
+
+            <!-- 8. BANNIÈRE / SECTION SPÉCIALE SPORT -->
+            <section class="mb-5 p-4 rounded text-white" style="background: linear-gradient(135deg, #0e1117 0%, #1c0608 100%); border-top: 4px solid var(--rao-red);">
+                <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                    <div>
+                        <span class="badge bg-danger text-uppercase mb-1">RAO SPORT EN DIRECT</span>
+                        <h2 class="text-white font-title m-0">Résultats & Compétitions Sportives</h2>
+                    </div>
+                    <a href="categorie.html?cat=sport" class="btn btn-outline-light btn-sm">
+                        Voir tout le sport <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+                <!-- Scores en direct et fiches de matchs -->
+                <div class="row g-3" id="sports-scores-container">
+                    <!-- Rempli dynamiquement par sports.js -->
+                </div>
+            </section>
+
+            <!-- 9. SECTION SOCIÉTÉ & NATIONALE -->
+            <section class="mb-5">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="bi bi-people-fill"></i> Société & Vie Citoyenne</h2>
+                    <a href="categorie.html?cat=societe" class="section-more-link">Voir plus <i class="bi bi-chevron-right"></i></a>
+                </div>
+                <div class="row g-3" id="societe-articles-container">
+                    <!-- Rempli dynamiquement -->
+                </div>
+            </section>
+
+            <!-- 10. SECTION VIDÉOS / RAO MEDIA TV -->
+            <section class="mb-5 p-4 bg-rao-black rounded text-white">
+                <div class="section-header border-secondary mb-4">
+                    <h2 class="section-title text-white"><i class="bi bi-camera-reels-fill text-rao-red"></i> RAO MEDIA TV - Vidéos & Reportages</h2>
+                    <a href="videos.html" class="section-more-link text-light">Toutes les vidéos <i class="bi bi-chevron-right"></i></a>
+                </div>
+                <div class="row g-3" id="home-videos-container">
+                    <!-- Rempli dynamiquement par videos.js -->
+                </div>
+            </section>
+
+            <!-- 11. SECTION CULTURE & ÉVÉNEMENTS -->
+            <section class="mb-5">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="section-header">
+                            <h2 class="section-title"><i class="bi bi-palette-fill"></i> Culture & Arts</h2>
+                            <a href="categorie.html?cat=culture" class="section-more-link">Voir plus <i class="bi bi-chevron-right"></i></a>
+                        </div>
+                        <div class="row g-3" id="culture-articles-container">
+                            <!-- Rempli dynamiquement -->
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="section-header">
+                            <h2 class="section-title"><i class="bi bi-calendar-event-fill"></i> Événements & Agendas</h2>
+                            <a href="evenements.html" class="section-more-link">Tout l'agenda <i class="bi bi-chevron-right"></i></a>
+                        </div>
+                        <div class="row g-3" id="home-events-container">
+                            <!-- Rempli dynamiquement par events.js -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. SECTION NEWSLETTER -->
+            <section class="mb-5">
+                <div class="newsletter-box">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 mb-3 mb-lg-0">
+                            <span class="badge bg-danger mb-2">Restez informés</span>
+                            <h3 class="fw-bold mb-2">Abonnez-vous à la Newsletter Quotidienne</h3>
+                            <p class="text-light opacity-75 mb-0">Recevez chaque matin l'essentiel de l'actualité sénégalaise et internationale directement dans votre boîte email.</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <form id="newsletter-form">
+                                <div class="input-group">
+                                    <input type="email" class="form-control form-control-lg" placeholder="Votre adresse email..." required>
+                                    <button class="btn btn-rao-red px-4" type="submit">S'abonner</button>
+                                </div>
+                                <small class="text-light opacity-50 mt-2 d-block">Nous respectons votre vie privée. Aucun spam garanti.</small>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row g-4 pb-4">
+                <!-- Col 1: À propos -->
+                <div class="col-lg-4 col-md-6">
+                    <img src="assets/images/logo.png" alt="RAO MEDIA TV" class="brand-logo-img mb-3" style="filter: brightness(0) invert(1); height: 55px;">
+                    <p id="footer-about" class="small mb-3">
+                        RAO MEDIA TV est une plateforme d'information indépendante de premier plan, dédiée au décryptage de l'actualité politique, économique, sociale, culturelle et sportive du Sénégal et du monde entier.
+                    </p>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="social-fb btn btn-sm btn-outline-light"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-tw btn btn-sm btn-outline-light"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-yt btn btn-sm btn-outline-light"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="social-tk btn btn-sm btn-outline-light"><i class="bi bi-tiktok"></i></a>
+                        <a href="#" class="social-wa btn btn-sm btn-outline-light"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Rubriques -->
+                <div class="col-lg-2 col-md-6">
+                    <h5>Rubriques</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="categorie.html?cat=politique">Politique</a></li>
+                        <li><a href="categorie.html?cat=societe">Société</a></li>
+                        <li><a href="categorie.html?cat=economie">Économie</a></li>
+                        <li><a href="categorie.html?cat=sport">Sport</a></li>
+                        <li><a href="categorie.html?cat=culture">Culture</a></li>
+                        <li><a href="categorie.html?cat=international">International</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Liens Utiles -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Liens Utiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="evenements.html">Agenda & Événements</a></li>
+                        <li><a href="videos.html">RAO MEDIA Web TV</a></li>
+                        <li><a href="admin/login.html">Espace Rédaction & Admin</a></li>
+                        <li><a href="#">Charte Déontologique</a></li>
+                        <li><a href="#">Mentions Légales</a></li>
+                        <li><a href="#">Politique de Confidentialité</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Rédaction</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><i class="bi bi-geo-alt-fill text-danger me-2"></i><span id="footer-address">Avenue Cheikh Anta Diop, Dakar</span></li>
+                        <li class="mb-2"><i class="bi bi-telephone-fill text-danger me-2"></i><span id="footer-phone">+221 33 824 10 10</span></li>
+                        <li class="mb-2"><i class="bi bi-envelope-fill text-danger me-2"></i><span id="footer-email">contact@raomediatv.com</span></li>
+                    </ul>
+                    <a href="admin/login.html" class="btn btn-rao-red btn-sm mt-2 w-100">
+                        <i class="bi bi-lock-fill me-1"></i> Connexion Administration
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <p class="mb-0 text-secondary">&copy; 2026 RAO MEDIA TV. Tous droits réservés. Conception professionnelle d'information numérique.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core App Scripts -->
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/articles.js"></script>
+    <script src="assets/js/sports.js"></script>
+    <script src="assets/js/videos.js"></script>
+    <script src="assets/js/events.js"></script>
+</body>
+</html>

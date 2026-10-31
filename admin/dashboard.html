@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord - Administration RAO MEDIA TV</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-body">
+
+    <!-- 1. SIDEBAR -->
+    <aside class="admin-sidebar">
+        <div class="sidebar-brand">
+            <a href="dashboard.html" class="d-flex align-items-center text-white text-decoration-none">
+                <img src="../assets/images/logo.png" alt="RAO MEDIA TV" class="sidebar-logo">
+            </a>
+        </div>
+
+        <div class="sidebar-heading">Général</div>
+        <ul class="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="dashboard.html">
+                    <i class="bi bi-speedometer2"></i> Dashboard
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-heading">Contenu Éditorial</div>
+        <ul class="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="articles.html">
+                    <i class="bi bi-newspaper"></i> Articles
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="ajouter-article.html">
+                    <i class="bi bi-pencil-square"></i> Nouveau Article
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="categories.html">
+                    <i class="bi bi-tags"></i> Catégories
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="evenements.html">
+                    <i class="bi bi-calendar-event"></i> Événements
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="sports.html">
+                    <i class="bi bi-trophy"></i> Sports & Scores
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="videos.html">
+                    <i class="bi bi-play-btn"></i> Vidéos Web TV
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-heading">Administration</div>
+        <ul class="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="commentaires.html">
+                    <i class="bi bi-chat-dots"></i> Commentaires
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="utilisateurs.html">
+                    <i class="bi bi-people"></i> Utilisateurs
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="parametres.html">
+                    <i class="bi bi-gear"></i> Paramètres du Site
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <a href="#" class="btn-admin-logout text-danger text-decoration-none small fw-bold d-flex align-items-center gap-2">
+                <i class="bi bi-box-arrow-left fs-5"></i> Déconnexion
+            </a>
+        </div>
+    </aside>
+
+    <!-- 2. MAIN WRAPPER -->
+    <div class="admin-main-wrapper">
+        <!-- TOPBAR -->
+        <header class="admin-topbar">
+            <div class="d-flex align-items-center gap-3">
+                <button class="topbar-toggler" id="sidebar-toggle">
+                    <i class="bi bi-list"></i>
+                </button>
+                <h5 class="mb-0 fw-bold d-none d-sm-block text-dark">Tableau de bord</h5>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+                <a href="../index.html" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill px-3">
+                    <i class="bi bi-globe me-1 text-danger"></i> Voir le site public
+                </a>
+                <div class="vr mx-1"></div>
+                <div class="dropdown">
+                    <button class="btn btn-light btn-sm dropdown-toggle d-flex align-items-center gap-2 border" type="button" data-bs-toggle="dropdown">
+                        <div class="rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center" style="width: 28px; height: 28px; font-size: 0.8rem;">
+                            AD
+                        </div>
+                        <span class="d-none d-md-inline small fw-semibold admin-user-name">Aly Dieng</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+                        <li><span class="dropdown-item-text small text-muted admin-user-role">Administrateur en Chef</span></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item small" href="parametres.html"><i class="bi bi-gear me-2"></i>Paramètres</a></li>
+                        <li><a class="dropdown-item small text-danger btn-admin-logout" href="#"><i class="bi bi-box-arrow-left me-2"></i>Déconnexion</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTENT -->
+        <main class="admin-content">
+            <!-- Bienvenue & Raccourcis rapides -->
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+                <div>
+                    <h2 class="fs-4 fw-bold mb-1">Bienvenue dans l'espace rédaction RAO MEDIA TV</h2>
+                    <p class="text-muted small mb-0">Supervisez les publications, modérez les interactions et gérez votre portail d'actualité.</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <a href="ajouter-article.html" class="btn btn-danger btn-sm" style="background-color: #D71920; border: none;">
+                        <i class="bi bi-plus-circle me-1"></i> Rédiger un article
+                    </a>
+                    <a href="evenements.html" class="btn btn-outline-dark btn-sm">
+                        <i class="bi bi-calendar-plus me-1"></i> Nouvel événement
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARTES DE STATISTIQUES -->
+            <div class="row g-3 mb-4">
+                <!-- Total Articles -->
+                <div class="col-sm-6 col-lg-3">
+                    <div class="stat-card">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <div class="stat-value" id="stat-total-articles">0</div>
+                                <div class="stat-label">Total Articles</div>
+                            </div>
+                            <div class="stat-icon stat-icon-red">
+                                <i class="bi bi-newspaper"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Articles Publiés -->
+                <div class="col-sm-6 col-lg-3">
+                    <div class="stat-card">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <div class="stat-value text-success" id="stat-published-articles">0</div>
+                                <div class="stat-label">Publiés en Ligne</div>
+                            </div>
+                            <div class="stat-icon stat-icon-green">
+                                <i class="bi bi-check-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brouillons -->
+                <div class="col-sm-6 col-lg-3">
+                    <div class="stat-card">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <div class="stat-value text-warning" id="stat-draft-articles">0</div>
+                                <div class="stat-label">Brouillons</div>
+                            </div>
+                            <div class="stat-icon stat-icon-purple">
+                                <i class="bi bi-file-earmark-text"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total Vues -->
+                <div class="col-sm-6 col-lg-3">
+                    <div class="stat-card">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <div class="stat-value text-primary" id="stat-total-views">0</div>
+                                <div class="stat-label">Audience Totale (Vues)</div>
+                            </div>
+                            <div class="stat-icon stat-icon-blue">
+                                <i class="bi bi-graph-up"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DEUXIÈME LIGNE DE STATS RAPIDES -->
+            <div class="row g-3 mb-4">
+                <div class="col-md-3 col-6">
+                    <div class="bg-white p-3 rounded border text-center">
+                        <i class="bi bi-tags text-danger fs-4 mb-1 d-block"></i>
+                        <span class="fs-5 fw-bold" id="stat-categories">0</span>
+                        <div class="small text-muted">Catégories actives</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="bg-white p-3 rounded border text-center">
+                        <i class="bi bi-calendar-check text-primary fs-4 mb-1 d-block"></i>
+                        <span class="fs-5 fw-bold" id="stat-events">0</span>
+                        <div class="small text-muted">Événements programmés</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="bg-white p-3 rounded border text-center">
+                        <i class="bi bi-play-circle text-danger fs-4 mb-1 d-block"></i>
+                        <span class="fs-5 fw-bold" id="stat-videos">0</span>
+                        <div class="small text-muted">Vidéos Web TV</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="bg-white p-3 rounded border text-center">
+                        <i class="bi bi-chat-dots text-success fs-4 mb-1 d-block"></i>
+                        <span class="fs-5 fw-bold" id="stat-total-comments">0</span>
+                        <div class="small text-muted">Commentaires lecteurs</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TABLEAU DES DERNIERS ARTICLES -->
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <h3 class="admin-card-title"><i class="bi bi-clock-history text-danger me-2"></i>Dernières publications éditoriales</h3>
+                    <a href="articles.html" class="btn btn-outline-dark btn-sm">Gérer tous les articles <i class="bi bi-arrow-right ms-1"></i></a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table admin-table align-middle">
+                        <thead>
+                            <tr>
+                                <th>Aperçu</th>
+                                <th>Titre de l'article</th>
+                                <th>Rubrique</th>
+                                <th>Statut</th>
+                                <th>Lectures</th>
+                                <th class="text-end">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dashboard-recent-articles">
+                            <!-- Rempli dynamiquement -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- TABLEAU DES DERNIERS COMMENTAIRES -->
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <h3 class="admin-card-title"><i class="bi bi-chat-quote text-danger me-2"></i>Dernières interactions & commentaires</h3>
+                    <a href="commentaires.html" class="btn btn-outline-dark btn-sm">Espace modération <i class="bi bi-arrow-right ms-1"></i></a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table admin-table align-middle">
+                        <thead>
+                            <tr>
+                                <th>Auteur</th>
+                                <th>Commentaire & Article</th>
+                                <th>Statut</th>
+                                <th class="text-end">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dashboard-recent-comments">
+                            <!-- Rempli dynamiquement -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Bootstrap Bundle & Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/storage.js"></script>
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html>
